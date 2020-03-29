@@ -96,11 +96,6 @@ Resources:
               sudo echo 'ClientAliveInterval 4' >> /etc/ssh/sshd_config
               sudo echo 'ClientAliveCountMax 22' >> /etc/ssh/sshd_config
               sudo systemctl restart sshd
-                            
-              # Clone srource repos
-              cd /home/centos
-              git clone https://github.com/samiamr/project-battleboat.git
-              rm -rf project-battleboat/ansible-deploy-fake-backend
               
   InstanceSecurityGroupJenkinsServer:
     Type: AWS::EC2::SecurityGroup
