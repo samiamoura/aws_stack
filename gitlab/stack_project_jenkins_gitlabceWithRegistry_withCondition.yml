@@ -141,7 +141,7 @@ Resources:
               rm -f /etc/docker/certs.d/$GITLAB_EXTERNAL_HOSTNAME/$GITLAB_EXTERNAL_HOSTNAME.key
               mv /etc/docker/certs.d/$GITLAB_EXTERNAL_HOSTNAME/$GITLAB_EXTERNAL_HOSTNAME.crt /etc/docker/certs.d/$GITLAB_EXTERNAL_HOSTNAME/ca.crt
               
-              # Desactivate ssh timer
+              # Disable ssh timer
               sudo echo 'ClientAliveInterval 4' >> /etc/ssh/sshd_config
               sudo echo 'ClientAliveCountMax 22' >> /etc/ssh/sshd_config
               sudo systemctl restart sshd
@@ -156,7 +156,7 @@ Resources:
       Tags:
        - Key: Name
          Value: 'Rules GitLabJenkinsServer'
-      GroupDescription: Enable SSH access via port 22, 80, 8080, 8443 and  443
+      GroupDescription: Enable SSH access via port 22, 80, 8080, 8443 and 2222
       SecurityGroupIngress:
       - IpProtocol: tcp
         FromPort: 22
